@@ -1,12 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+import SearchBar from './Components/SearchBar'
+import MovieList from './Components/MovieList'
+import MovieCard from './Components/MovieCard'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //
 
   return (
     <>
-      
+      <header>
+        <SearchBar></SearchBar>
+      </header>
+      <main>
+        <div class="List">
+          <MovieList></MovieList>
+        </div>
+        <div class="Card">
+          <MovieCard></MovieCard>
+        </div>
+      </main>
     </>
   )
 }
