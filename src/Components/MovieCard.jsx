@@ -5,7 +5,7 @@ function MovieCard(props){
 
     return(
         <>
-            <li><img src={props.poster}></img> {props.title} - Year: {props.year} - Rate: {props.rated}</li>
+            <li><img src={props.poster}/> {props.title} - Year: {props.year} - Rate: {props.rated}</li>
         </>
     )
 }

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import './App.css'
+import api from './modules/api.jsx'
+
 import SearchBar from './Components/SearchBar.jsx'
 import MovieList from './Components/MovieList.jsx'
 import MovieDetail from './Components/MovieDetail.jsx'
 
 function App() {
-  //
+  
+  
 
   return (
     <>
@@ -16,7 +18,7 @@ function App() {
         <div class="List">
           <MovieList/>
         </div>
-        <div class="Card">
+        <div class="Detail">
           <MovieDetail/>
         </div>
       </main>
