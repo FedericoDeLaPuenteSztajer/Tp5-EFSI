@@ -1,4 +1,4 @@
-//
+import MovieCard from './MovieCard.jsx'
 
 function MovieList(props) {
     //
@@ -6,7 +6,7 @@ function MovieList(props) {
     return (
         <ul>
             {(props.Results).forEach = (result) => {
-                <li>{result.Title} - Year: {result.Year} - Rate: {result.Rated}</li>
+                <MovieCard poster={result.Poster} title={result.Title} year={result.Year} rate={result.Rated}/>
             }}
         </ul>
     )

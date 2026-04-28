@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import SearchBar from './Components/SearchBar'
-import MovieList from './Components/MovieList'
-import MovieCard from './Components/MovieCard'
+import SearchBar from './Components/SearchBar.jsx'
+import MovieList from './Components/MovieList.jsx'
+import MovieDetail from './Components/MovieDetail.jsx'
 
 function App() {
   //
@@ -10,14 +10,14 @@ function App() {
   return (
     <>
       <header>
-        <SearchBar></SearchBar>
+        <SearchBar/>
       </header>
       <main>
         <div class="List">
-          <MovieList></MovieList>
+          <MovieList/>
         </div>
         <div class="Card">
-          <MovieCard></MovieCard>
+          <MovieDetail/>
         </div>
       </main>
     </>

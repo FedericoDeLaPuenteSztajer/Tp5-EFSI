@@ -1,12 +1,11 @@
 //
 
-function MovieDetail(){
+function MovieDetail(props){
     //
 
     return(
         <>
-        
-        
+                    
         </>
     )
 }
