@@ -24,7 +24,7 @@ function App() {
         setMovie((response.data))
         setLoading(false)
       })
-      .catch((error) =>{
+      .catch((error) => {
         alert("Error al buscar pelicula")
       })
   }
@@ -41,7 +41,9 @@ function App() {
             <MovieList /> {/*Incompleto*/}
           </div>
 
-          <div><Loader /></div>
+          <div class="Detail">
+            <Loader />
+          </div>
         </main>
       </>
     )
