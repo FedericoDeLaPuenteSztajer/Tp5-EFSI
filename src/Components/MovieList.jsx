@@ -1,13 +1,14 @@
 //
 
-function MovieList(){
+function MovieList(props) {
     //
 
-    return(
-        <>
-        
-        
-        </>
+    return (
+        <ul>
+            {(props.Results).forEach = (result) => {
+                <li>{result.Title} - Year: {result.Year} - Rate: {result.Rated}</li>
+            }}
+        </ul>
     )
 }
 
