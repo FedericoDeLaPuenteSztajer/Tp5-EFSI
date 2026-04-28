@@ -5,7 +5,7 @@ function SearchBar(){
 
     return(
         <>
-        <form onSubmit="">
+        <form>
             Nombre o ID:<input name="name"></input>
             <button type="submit"></button>
         </form>
