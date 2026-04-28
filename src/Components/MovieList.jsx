@@ -1,15 +1,19 @@
 import MovieCard from './MovieCard.jsx'
 
 function MovieList(props) {
-    //
+    let lista = <></>
 
-    return (
-        <ul>
+    if (props.Results[0]) {
+        lista = (<ul>
             {(props.Results).forEach = (result) => {
-                <MovieCard poster={result.Poster} title={result.Title} year={result.Year} rate={result.Rated}/>
+                <MovieCard poster={result.Poster} title={result.Title} year={result.Year} rate={result.Rated} />
             }}
-        </ul>
-    )
+        </ul>)
+    }else{
+        lista= <>No se encontraron películas</>
+    }
+
+    return lista;
 }
 
 export default MovieList

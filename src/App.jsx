@@ -38,7 +38,7 @@ function App() {
         <main>
 
           <div class="List">
-            <MovieList /> {/*Incompleto*/}
+            <MovieList Results={[actualMovie]}/> {/*Incompleto*/}
           </div>
 
           <div class="Detail">
@@ -56,11 +56,11 @@ function App() {
         <main>
 
           <div class="List">
-            <MovieList /> {/*Incompleto*/}
+            <MovieList Results={[actualMovie]}/> {/*Incompleto*/}
           </div>
 
           <div class="Detail">
-            <MovieDetail /> {/*Incompleto*/}
+            <MovieDetail Movie={actualMovie}/> {/*Incompleto*/}
           </div>
         </main>
       </>

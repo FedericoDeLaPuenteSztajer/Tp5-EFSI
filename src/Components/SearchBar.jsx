@@ -1,14 +1,19 @@
 //
 
-function SearchBar(){
-    //
+function SearchBar(props) {
+    const submit = (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
 
-    return(
+        props.CargarMovie(data.get("name"));
+    }
+
+    return (
         <>
-        <form>
-            Nombre o ID:<input name="name"></input>
-            <button type="submit"></button>
-        </form>
+            <form onSubmit={submit}>
+                Nombre o ID:<input name="name"></input>
+                <button type="submit"></button>
+            </form>
         </>
     )
 }

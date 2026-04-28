@@ -2,7 +2,7 @@
 
 function MovieDetail(props) {
 
-    const Movie = props.movie
+    const Movie = props.Movie
 
     return (
         <ul>
