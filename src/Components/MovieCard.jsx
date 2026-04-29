@@ -1,15 +1,9 @@
 //
 
-function MovieCard(props){
-    let card = <></>
+function MovieCard(props) {
 
-    if (props.Movie) {
-        card = (<li><img src={props.poster}/> {props.title} - Year: {props.year} - Rate: {props.rated}</li>)
-    }else{
-        card= <>Clikea una película</>
-    }
-
-    return card;
+    return (
+        <li><img src={props.poster} /> {props.title} - Year: {props.year} - Rate: {props.rated}</li>);
 }
 
 export default MovieCard

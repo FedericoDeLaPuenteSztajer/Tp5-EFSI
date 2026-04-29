@@ -7,21 +7,20 @@ import MovieDetail from './Components/MovieDetail.jsx'
 
 import Loader from './Components/Loader.jsx'
 
-
 function App() {
   let application = <></>
+  const API_KEY = '?apikey=21273b29';
 
+  const [moviesList, setMoviesList] = useState([])
   const [actualMovie, setMovie] = useState(undefined)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-  const CargarMovie = (name) => {
+  const SearchMovie = (name) => {
     setLoading(true)
 
-    const newName = (name.split(" ")).map(l => l + "+")
-
-    api.get("&t=" + newName)
+    api.get(API_KEY + "&t=" + name.replaceAll(" ", "+"))
       .then((response) => {
-        setMovie((response.data))
+        setMoviesList((response.data.Search))
         setLoading(false)
       })
       .catch((error) => {
@@ -29,20 +28,24 @@ function App() {
       })
   }
 
+  const CargarMovie = () => {
+
+  }
+
   if (loading) {
     application = (
       <>
         <header>
-          <SearchBar CargarMovie={CargarMovie} /> {/*Incompleto*/}
+          <SearchBar SearchMovie={SearchMovie} />
         </header>
         <main>
 
-          <div class="List">
-            <MovieList Results={[actualMovie]}/> {/*Incompleto*/}
+          <div className="List">
+            <Loader />
           </div>
 
-          <div class="Detail">
-            <Loader />
+          <div className="Detail">
+            <MovieDetail Movie={actualMovie} />
           </div>
         </main>
       </>
@@ -51,16 +54,16 @@ function App() {
     application = (
       <>
         <header>
-          <SearchBar CargarMovie={CargarMovie} /> {/*Incompleto*/}
+          <SearchBar SearchMovie={SearchMovie} />
         </header>
         <main>
 
-          <div class="List">
-            <MovieList Results={[actualMovie]}/> {/*Incompleto*/}
+          <div className="List">
+            <MovieList Results={[moviesList]} />
           </div>
 
-          <div class="Detail">
-            <MovieDetail Movie={actualMovie}/> {/*Incompleto*/}
+          <div className="Detail">
+            <MovieDetail Movie={actualMovie} />
           </div>
         </main>
       </>

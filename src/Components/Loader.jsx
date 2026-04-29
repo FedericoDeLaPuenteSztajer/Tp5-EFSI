@@ -5,7 +5,7 @@ function Loader(){
 
     return(
         <>
-            <h2>Cargando película</h2>
+            <h2>0\-/0 Cargando busqueda...</h2>
         </>
     )
 }

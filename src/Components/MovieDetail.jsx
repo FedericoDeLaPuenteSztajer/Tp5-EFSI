@@ -2,10 +2,11 @@
 
 function MovieDetail(props) {
 
+    let detailsBox = <></>
     const Movie = props.Movie
 
-    return (
-        <ul>
+    if (props.Movie) {
+        detailsBox = (<ul>
             <li>Título completo: {Movie.Title}</li>
             <li>Póster:
                 <img src={Movie.Poster} alt="Póster de la película" />
@@ -19,8 +20,12 @@ function MovieDetail(props) {
             <li>Idioma: {Movie.Language}</li>
             <li>País: {Movie.Country}</li>
             <li>Puntaje IMDb: {Movie.imdbRating}</li>
-        </ul>
-    )
+        </ul>)
+    } else {
+        detailsBox = <>Clikea una película</>
+    }
+
+    return detailsBox;
 }
 
 export default MovieDetail

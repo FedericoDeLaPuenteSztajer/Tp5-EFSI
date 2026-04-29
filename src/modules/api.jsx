@@ -4,7 +4,7 @@ import axios from 'axios';
 //Example: https://www.omdbapi.com/?apikey=21273b29&t=Toy+Story
 
 const api = axios.create({
-    baseURL: 'https://www.omdbapi.com/?apikey=21273b29'
+    baseURL: 'https://www.omdbapi.com'
 })
 
 export default api;

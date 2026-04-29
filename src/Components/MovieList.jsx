@@ -9,8 +9,8 @@ function MovieList(props) {
                 <MovieCard poster={result.Poster} title={result.Title} year={result.Year} rate={result.Rated} />
             }}
         </ul>)
-    }else{
-        lista= <>No se encontraron películas</>
+    } else {
+        lista = <>No se encontraron películas</>
     }
 
     return lista;

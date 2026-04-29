@@ -5,7 +5,7 @@ function SearchBar(props) {
         e.preventDefault();
         const data = new FormData(e.target);
 
-        props.CargarMovie(data.get("name"));
+        props.SearchMovie(data.get("name"));
     }
 
     return (
