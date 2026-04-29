@@ -1,9 +1,11 @@
 //
 
 function MovieCard(props) {
-        console.log("X2")
+    const movie= props.movie;
+
     return (
-        <li><img src={props.poster} /> {props.title} - Year: {props.year} - Rate: {props.rated}</li>);
+        <li onClick={props.setMovie()}><img src={movie.Poster} /> {props.Title} - Year: {props.Year} - Rate: {props.Rated}</li>
+    );
 }
 
 export default MovieCard

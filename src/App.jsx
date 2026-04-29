@@ -28,10 +28,6 @@ function App() {
       })
   }
 
-  const CargarMovie = () => {
-    //Lo hago despues, es para cargar actualMovie
-  }
-
   if (loading) {
     application = (
       <>
@@ -59,7 +55,7 @@ function App() {
         <main>
 
           <div className="List">
-            <MovieList Results={moviesList} />
+            <MovieList Results={moviesList} setMovie={setMovie}/>
           </div>
 
           <div className="Detail">
