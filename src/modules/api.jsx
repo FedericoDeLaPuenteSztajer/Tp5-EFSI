@@ -1,7 +1,7 @@
 import axios from 'axios';
 //API page: https://www.omdbapi.com/
 //API key: 21273b29
-//Example: https://www.omdbapi.com/?apikey=21273b29&t=Toy+Story
+//Example: https://www.omdbapi.com/?apikey=21273b29&s=Toy+Story => devuelve los resultados similares
 
 const api = axios.create({
     baseURL: 'https://www.omdbapi.com'

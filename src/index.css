@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+.List img{
+    width: 30%;
+    height: auto;
+}
+
+.List ul li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5%;
+}

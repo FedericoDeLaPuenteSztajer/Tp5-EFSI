@@ -18,7 +18,7 @@ function App() {
   const SearchMovie = (name) => {
     setLoading(true)
 
-    api.get(API_KEY + "&t=" + name.replaceAll(" ", "+"))
+    api.get(API_KEY + "&s=" + name.replaceAll(" ", "+"))
       .then((response) => {
         setMoviesList((response.data.Search))
         setLoading(false)
@@ -29,7 +29,7 @@ function App() {
   }
 
   const CargarMovie = () => {
-
+    //Lo hago despues, es para cargar actualMovie
   }
 
   if (loading) {
@@ -59,7 +59,7 @@ function App() {
         <main>
 
           <div className="List">
-            <MovieList Results={[moviesList]} />
+            <MovieList Results={moviesList} />
           </div>
 
           <div className="Detail">
