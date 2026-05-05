@@ -6,7 +6,7 @@ function MovieList(props) {
     if (props.Results.length>0) {
         lista = (<ul>
             {(props.Results).map((result) => (
-                <MovieCard movie={result} setMovie={setMovie}/>
+                <MovieCard movie={result} setMovie={props.setMovie}/>
             ))}
         </ul>)
     } else {

@@ -8,9 +8,7 @@ function MovieDetail(props) {
     if (props.Movie) {
         detailsBox = (<ul>
             <li>Título completo: {Movie.Title}</li>
-            <li>Póster:
-                <img src={Movie.Poster} alt="Póster de la película" />
-            </li>
+            <img src={Movie.Poster} alt="Póster de la película" />
             <li>Año: {Movie.Year}</li>
             <li>Género: {Movie.Genre}</li>
             <li>Director: {Movie.Director}</li>
