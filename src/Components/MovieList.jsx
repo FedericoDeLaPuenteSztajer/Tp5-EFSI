@@ -3,10 +3,10 @@ import MovieCard from './MovieCard.jsx'
 function MovieList(props) {
     let lista = <></>
 
-    if (props.Results.length>0) {
+    if (props.Results.length > 0) {
         lista = (<ul>
             {(props.Results).map((result) => (
-                <MovieCard movie={result} GetAllMovieData={props.GetAllMovieData}/>
+                <MovieCard key={result.imdbID} movie={result} GetAllMovieData={props.GetAllMovieData} />
             ))}
         </ul>)
     } else {
