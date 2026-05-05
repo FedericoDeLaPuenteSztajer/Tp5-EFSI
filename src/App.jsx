@@ -15,7 +15,7 @@ function App() {
   const [actualMovie, setMovie] = useState(undefined)
   const [loading, setLoading] = useState(true)
 
-  const SearchMovie = (name) => {
+  const SearchMovies = (name) => {
     setLoading(true)
 
     api.get(API_KEY + "&s=" + name.replaceAll(" ", "+"))
@@ -28,45 +28,35 @@ function App() {
       })
   }
 
-  if (loading) {
-    application = (
-      <>
-        <header>
-          <SearchBar SearchMovie={SearchMovie} />
-        </header>
-        <main>
-
-          <div className="List">
-            <Loader />
-          </div>
-
-          <div className="Detail">
-            <MovieDetail Movie={actualMovie} />
-          </div>
-        </main>
-      </>
-    )
-  } else {
-    application = (
-      <>
-        <header>
-          <SearchBar SearchMovie={SearchMovie} />
-        </header>
-        <main>
-
-          <div className="List">
-            <MovieList Results={moviesList} setMovie={setMovie}/>
-          </div>
-
-          <div className="Detail">
-            <MovieDetail Movie={actualMovie} />
-          </div>
-        </main>
-      </>
-    )
+  const GetAllMovieData = async (title) => {
+    api.get(API_KEY + "&t=" + title.replaceAll(" ", "+"))
+      .then((response) => {
+        setMovie((response.data))
+      })
+      .catch((error) => {
+        alert("Error al buscar pelicula")
+      })
   }
 
-  return application
+  return (
+    <>
+      <header>
+        <SearchBar SearchMovies={SearchMovies} />
+      </header>
+      <main>
+
+        <div className="List">
+          {loading && <Loader />}
+          {!loading && <MovieList Results={moviesList} GetAllMovieData={GetAllMovieData} />}
+        </div>
+
+        <div className="Detail">
+          {actualMovie!=undefined && <MovieDetail Movie={actualMovie} />}
+        </div>
+      </main>
+    </>
+  )
+
 }
 
 export default App
